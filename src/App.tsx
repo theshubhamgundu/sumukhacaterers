@@ -447,6 +447,17 @@ export default function App() {
           <p className="text-[10px] text-[#FAF7F260] tracking-wider">
             © 2026 Sumukha Caterers, Hyderabad. All rights reserved.
           </p>
+          <p className="text-[10px] text-[#FAF7F260] tracking-wider mt-2">
+            Designed and developed by{" "}
+            <a
+              href="https://shubhamgundu.in"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#C9A96E] transition-colors"
+            >
+              shubhamgundu.in
+            </a>
+          </p>
         </div>
       </footer>
 
