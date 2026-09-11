@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CustomerReviews from "./CustomerReviews";
-import logoImg from "@/imports/WhatsApp_Image_2026-09-09_at_6.51.18_AM.jpeg";
+
+const logoImg = "/images/logo.jpeg";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -29,15 +30,15 @@ const CUISINES = [
 ];
 
 const HERO_IMAGES = {
-  main: "/hero/public.avif",
-  top: "/hero/hero-2.webp",
-  bottom: "/hero/about-1.png",
+  main: "/images/hero/public.avif",
+  top: "/images/hero/hero-2.webp",
+  bottom: "/images/hero/about-1.png",
 };
 
 const HERO_BG_LOOP_IMAGES = [
-  "/hero/public.avif",
-  "/hero/hero-2.webp",
-  "/hero/about-1.png",
+  "/images/hero/public.avif",
+  "/images/hero/hero-2.webp",
+  "/images/hero/about-1.png",
 ];
 
 const ABOUT_IMAGES = {
@@ -51,42 +52,42 @@ const SERVICES = [
     desc: "From pre-wedding events to the reception, we build generous menus that keep guests well served.",
     icon: "💍",
     tag: "50 – 5,000 guests",
-    image: "/services/wedding.jpg",
+    image: "/images/services/wedding.jpg",
   },
   {
     title: "Vegetarian Catering",
     desc: "Traditional and modern vegetarian menus with live counters and full-service setup.",
     icon: "🪔",
     tag: "Any scale",
-    image: "/services/veg.jpg",
+    image: "/images/services/veg.jpg",
   },
   {
     title: "Non-Veg Catering",
     desc: "Carefully curated non-veg menus featuring regional specialties and grilled selections.",
     icon: "🍗",
     tag: "50 – 2,000 guests",
-    image: "/services/nonveg.jpg",
+    image: "/images/services/nonveg.jpg",
   },
   {
     title: "Birthday Parties",
     desc: "Kid-friendly and family-style catering for birthday celebrations at home or event venues.",
     icon: "🎂",
     tag: "25 – 800 guests",
-    image: "/services/birthday.jpg",
+    image: "/images/services/birthday.jpg",
   },
   {
     title: "Corporate Gatherings",
     desc: "Professional catering for conferences, product launches, and team celebrations.",
     icon: "🏛️",
     tag: "50 – 1,500 guests",
-    image: "/services/corporate.jpg",
+    image: "/images/services/corporate.jpg",
   },
   {
     title: "House Warming Functions",
     desc: "Neat and timely catering for griha pravesh events with breakfast, lunch, or dinner service.",
     icon: "🏠",
     tag: "30 – 1,000 guests",
-    image: "/services/housewarming.jpg",
+    image: "/images/services/housewarming.jpg",
   },
 ];
 
@@ -341,7 +342,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div
               className="relative overflow-hidden rounded-[1.75rem] bg-cover bg-center p-8 text-white shadow-[0_24px_70px_-30px_rgba(123,30,30,0.7)]"
-              style={{ backgroundImage: "url('/services/veg-platter-bg.jpg')" }}
+              style={{ backgroundImage: "url('/images/services/veg-platter-bg.jpg')" }}
               role="img"
               aria-label="Traditional South Indian vegetarian banana leaf platter"
             >
@@ -363,7 +364,7 @@ export default function App() {
             </div>
             <div
               className="relative overflow-hidden rounded-[1.75rem] bg-cover bg-center p-8 text-white shadow-[0_24px_70px_-30px_rgba(123,30,30,0.7)]"
-              style={{ backgroundImage: "url('/services/non-veg-platter-bg.jpg')" }}
+              style={{ backgroundImage: "url('/images/services/non-veg-platter-bg.jpg')" }}
               role="img"
               aria-label="Non-vegetarian thali with grilled chicken, curries, and biryani"
             >
@@ -390,77 +391,61 @@ export default function App() {
       {/* TESTIMONIALS */}
       <CustomerReviews />
 
-      {/* CONTACT */}
-      <section id="contact" className="py-20 md:py-24 px-6 md:px-10 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-          <div>
-            <p className="text-xs text-[#C9A96E] font-semibold tracking-[0.3em] uppercase mb-3">Reach Us</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2C1A0E] mb-6">
-              Let's Create <span className="text-[#7B1E1E] italic">Something Beautiful</span>
-            </h2>
-            <div className="space-y-5">
-              {[
-                { icon: "📍", label: "Address", value: "14, Jayanagar 4th Block, Hyderabad, Karnataka — 560041" },
-                { icon: "📞", label: "Phone", value: "+91 77997 32345 · +91 80 2222 3333" },
-                { icon: "✉️", label: "Email", value: "info@sumukhacaterers.in" },
-                { icon: "⏰", label: "Hours", value: "Monday – Sunday: 8:00 AM – 9:00 PM" },
-              ].map((c) => (
-                <div key={c.label} className="flex items-start gap-4">
-                  <span className="text-xl mt-0.5">{c.icon}</span>
-                  <div>
-                    <p className="text-xs font-semibold tracking-widest uppercase text-[#C9A96E]">{c.label}</p>
-                    <p className="text-sm text-[#5C3D2E] mt-0.5">{c.value}</p>
-                  </div>
-                </div>
+
+      {/* FOOTER */}
+      <footer className="py-14 px-6 md:px-10 bg-[#2C1A0E] border-t border-[#C9A96E20]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+          {/* Brand */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <img src={logoImg} alt="Sumukha Caterers" className="h-14 object-contain" />
+            <p className="text-xs text-[#FAF7F2AA] text-center md:text-left leading-relaxed">
+              Serving events with dependable catering since 1999. Trusted by 6,000+ families across Hyderabad.
+            </p>
+          </div>
+
+          {/* Contact Details */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <h4 className="text-xs font-semibold tracking-[0.3em] uppercase text-[#C9A96E]">Contact Us</h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-sm mt-0.5">📍</span>
+                <p className="text-xs text-[#FAF7F2CC] leading-relaxed">14, Beeramguda 4th Block,<br />Hyderabad, Telangana — 500041</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-sm mt-0.5">📞</span>
+                <p className="text-xs text-[#FAF7F2CC] leading-relaxed">+91 77997 32345</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-sm mt-0.5">✉️</span>
+                <p className="text-xs text-[#FAF7F2CC] leading-relaxed">info@sumukhacaterers.in</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Hours & Links */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <h4 className="text-xs font-semibold tracking-[0.3em] uppercase text-[#C9A96E]">Hours</h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-sm mt-0.5">⏰</span>
+                <p className="text-xs text-[#FAF7F2CC] leading-relaxed">Monday – Sunday<br />8:00 AM – 9:00 PM</p>
+              </div>
+            </div>
+            <div className="gold-divider w-full opacity-20 mt-2" />
+            <div className="flex gap-4 mt-1">
+              {NAV_LINKS.map((l) => (
+                <a key={l.label} href={l.href} className="text-[10px] uppercase tracking-widest text-[#FAF7F280] hover:text-[#C9A96E] transition-colors">
+                  {l.label}
+                </a>
               ))}
             </div>
           </div>
-          <div>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              {[
-                { label: "Full Name", placeholder: "Ananya Sharma", type: "text" },
-                { label: "Phone Number", placeholder: "+91 77997 32345", type: "tel" },
-                { label: "Event Date", placeholder: "", type: "date" },
-                { label: "Number of Guests", placeholder: "e.g., 300", type: "number" },
-              ].map((f) => (
-                <div key={f.label}>
-                  <label className="block text-xs font-semibold tracking-[0.2em] text-[#7B4A2A] uppercase mb-1.5">
-                    {f.label}
-                  </label>
-                  <input
-                    type={f.type}
-                    placeholder={f.placeholder}
-                    className="w-full bg-[#FAF7F2] border border-[#E0D0BC] text-[#2C1A0E] placeholder-[#B0977E] px-4 py-3 text-sm focus:outline-none focus:border-[#7B1E1E] transition-colors"
-                  />
-                </div>
-              ))}
-              <div>
-                <label className="block text-xs font-semibold tracking-[0.2em] text-[#7B4A2A] uppercase mb-1.5">
-                  Event Details
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Tell us about your occasion..."
-                  className="w-full bg-[#FAF7F2] border border-[#E0D0BC] text-[#2C1A0E] placeholder-[#B0977E] px-4 py-3 text-sm focus:outline-none focus:border-[#7B1E1E] transition-colors resize-none"
-                />
-              </div>
-              <button type="submit"
-                className="btn-maroon w-full py-3.5 text-sm font-bold tracking-widest uppercase">
-                Send Enquiry ✦
-              </button>
-            </form>
-          </div>
         </div>
-      </section>
 
-      {/* FOOTER */}
-      <footer className="py-10 px-6 bg-[#2C1A0E] border-t border-[#C9A96E20]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <img src={logoImg} alt="Sumukha Caterers" className="h-12 object-contain brightness-0 invert opacity-80" />
-          <div className="gold-divider w-32 opacity-30" />
-          <p className="text-xs text-[#FAF7F2AA] text-center leading-relaxed">
-            © 2026 Sumukha Caterers, Hyderabad.<br />
-            Serving events with dependable catering since 1999.
+        {/* Bottom bar */}
+        <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-[#C9A96E15] text-center">
+          <p className="text-[10px] text-[#FAF7F260] tracking-wider">
+            © 2026 Sumukha Caterers, Hyderabad. All rights reserved.
           </p>
         </div>
       </footer>

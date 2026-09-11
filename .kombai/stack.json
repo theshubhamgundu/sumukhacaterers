@@ -1,0 +1,14 @@
+// Kombai Tech Stack Configuration
+// Each value must be a string or an array of strings.
+// Example: "Framework": "Vite" or "Project Type": ["React", "Vue"]
+{
+  "Project Type": "React",
+  "Framework": "Vite",
+  "Build Tool": "Vite",
+  "CSS Implementation": "Vanilla CSS",
+  "Tailwind Version": "v4",
+  "TS/JS": "TS",
+  "API Client": "Fetch API",
+  "Package Manager": "npm",
+  "React Version": "19"
+}
