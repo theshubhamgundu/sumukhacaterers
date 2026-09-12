@@ -159,7 +159,7 @@ export default function MenuShowcase() {
 
   const whatsappMessage = useMemo(() => {
     const lines = [
-      "Hello SA Caterers, I would like a quotation for my event.",
+      "Hello Sumukha Caterers, I would like a quotation for my event.",
       "",
       "Selected menu items:",
     ];
@@ -218,8 +218,8 @@ export default function MenuShowcase() {
                 type="button"
                 onClick={() => selectTab(tab.id)}
                 className={`shrink-0 border px-4 py-3 text-left transition-all ${activeTab.id === tab.id
-                    ? "border-[#7B1E1E] bg-[#7B1E1E] text-white shadow-md"
-                    : "border-[#D8C2AA] bg-[#FAF7F2] text-[#6B5040] hover:border-[#C9A96E] hover:text-[#7B1E1E]"
+                  ? "border-[#7B1E1E] bg-[#7B1E1E] text-white shadow-md"
+                  : "border-[#D8C2AA] bg-[#FAF7F2] text-[#6B5040] hover:border-[#C9A96E] hover:text-[#7B1E1E]"
                   }`}
               >
                 <span className="block text-[10px] font-bold uppercase tracking-[0.18em] opacity-75">
@@ -291,7 +291,7 @@ export default function MenuShowcase() {
                 {selectedDishes.length} {selectedDishes.length === 1 ? "dish" : "dishes"} selected
                 {selectedPremiumTier ? ` · ${selectedPremiumTier.name.split(" — ")[0]} plan selected` : ""}
               </p>
-              <p className="mt-2 text-xs text-white/60">Select dishes above, choose a premium plan below, then send everything to SA Caterers.</p>
+              <p className="mt-2 text-xs text-white/60">Select dishes above, choose a premium plan below, then send everything to Sumukha Caterers.</p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
               {(selectedDishes.length > 0 || selectedPremium) && (
