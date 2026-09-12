@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CustomerReviews from "./CustomerReviews";
-import MenuShowcase from "./MenuShowcase";
 import { createWhatsAppUrl } from "./whatsapp";
 
 const logoImg = "/images/logo.jpeg";
@@ -8,7 +7,6 @@ const logoImg = "/images/logo.jpeg";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Menu", href: "#menu" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -242,8 +240,8 @@ export default function App() {
             <OrnamentDivider />
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-5 md:mt-6 justify-center md:justify-start">
-              <a href="#menu" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
-                Explore Menu
+              <a href="#services" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
+                Explore Services
               </a>
               <a href="#contact" className="btn-outline-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
                 Get a Quote
@@ -291,8 +289,6 @@ export default function App() {
           ))}
         </div>
       </div>
-
-      <MenuShowcase />
 
       {/* SERVICES */}
       <section id="services" className="py-20 md:py-24 px-6 md:px-10 bg-[#FAF7F2] paisley-tile">
