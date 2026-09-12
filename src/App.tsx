@@ -413,7 +413,7 @@ export default function App() {
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-sm mt-0.5">📞</span>
-                <a href={createWhatsAppUrl("Hello SA Caterers, I would like to discuss catering options for my event.")} target="_blank" rel="noreferrer" className="text-xs text-[#FAF7F2CC] leading-relaxed hover:text-[#25D366] transition-colors">
+                <a href={createWhatsAppUrl("Hello Sumukha Caterers, I would like to discuss catering options for my event.")} target="_blank" rel="noreferrer" className="text-xs text-[#FAF7F2CC] leading-relaxed hover:text-[#25D366] transition-colors">
                   WhatsApp: +91 77997 32345
                 </a>
               </div>
