@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CustomerReviews from "./CustomerReviews";
+import MenuShowcase from "./MenuShowcase";
+import { createWhatsAppUrl } from "./whatsapp";
 
 const logoImg = "/images/logo.jpeg";
 
@@ -240,7 +242,7 @@ export default function App() {
             <OrnamentDivider />
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-5 md:mt-6 justify-center md:justify-start">
-              <a href="#menu-builder" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
+              <a href="#menu" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
                 Explore Menu
               </a>
               <a href="#contact" className="btn-outline-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
@@ -289,6 +291,8 @@ export default function App() {
           ))}
         </div>
       </div>
+
+      <MenuShowcase />
 
       {/* SERVICES */}
       <section id="services" className="py-20 md:py-24 px-6 md:px-10 bg-[#FAF7F2] paisley-tile">
@@ -393,7 +397,7 @@ export default function App() {
 
 
       {/* FOOTER */}
-      <footer className="py-14 px-6 md:px-10 bg-[#2C1A0E] border-t border-[#C9A96E20]">
+      <footer id="contact" className="py-14 px-6 md:px-10 bg-[#2C1A0E] border-t border-[#C9A96E20]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start gap-4">
@@ -413,7 +417,9 @@ export default function App() {
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-sm mt-0.5">📞</span>
-                <p className="text-xs text-[#FAF7F2CC] leading-relaxed">+91 77997 32345</p>
+                <a href={createWhatsAppUrl("Hello SA Caterers, I would like to discuss catering options for my event.")} target="_blank" rel="noreferrer" className="text-xs text-[#FAF7F2CC] leading-relaxed hover:text-[#25D366] transition-colors">
+                  WhatsApp: +91 77997 32345
+                </a>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-sm mt-0.5">✉️</span>
