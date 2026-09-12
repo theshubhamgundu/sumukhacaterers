@@ -205,7 +205,7 @@ export default function MenuShowcase() {
             Menus made for <span className="text-[#7B1E1E] italic">memorable</span> gatherings
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#6B5040] md:text-base">
-            Explore the complete catering menus from the SA Caterers collection. From breakfast counters to royal wedding spreads,
+            Explore the complete catering menus from the Sumukha Catererscollection. From breakfast counters to royal wedding spreads,
             every dish is listed exactly as curated for your celebration.
           </p>
         </div>
@@ -217,11 +217,10 @@ export default function MenuShowcase() {
                 key={tab.id}
                 type="button"
                 onClick={() => selectTab(tab.id)}
-                className={`shrink-0 border px-4 py-3 text-left transition-all ${
-                  activeTab.id === tab.id
+                className={`shrink-0 border px-4 py-3 text-left transition-all ${activeTab.id === tab.id
                     ? "border-[#7B1E1E] bg-[#7B1E1E] text-white shadow-md"
                     : "border-[#D8C2AA] bg-[#FAF7F2] text-[#6B5040] hover:border-[#C9A96E] hover:text-[#7B1E1E]"
-                }`}
+                  }`}
               >
                 <span className="block text-[10px] font-bold uppercase tracking-[0.18em] opacity-75">
                   {tab.id.includes("below") ? "Under 200 guests" : tab.id === "breakfast-station" ? "Morning service" : "Signature spread"}
@@ -350,9 +349,8 @@ export default function MenuShowcase() {
                 key={mode}
                 type="button"
                 onClick={() => setPremiumMode(mode)}
-                className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.16em] transition-all ${
-                  premiumMode === mode ? "bg-[#7B1E1E] text-white shadow-sm" : "text-[#7B4A2A] hover:text-[#7B1E1E]"
-                }`}
+                className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-[0.16em] transition-all ${premiumMode === mode ? "bg-[#7B1E1E] text-white shadow-sm" : "text-[#7B4A2A] hover:text-[#7B1E1E]"
+                  }`}
               >
                 {mode === "veg" ? "Vegetarian" : "Non-Vegetarian"}
               </button>
@@ -367,9 +365,8 @@ export default function MenuShowcase() {
               return (
                 <article
                   key={tierKey}
-                  className={`relative flex flex-col border p-5 ${
-                    tier.badge ? "border-[#C9A96E] bg-[#7B1E1E] text-white shadow-[0_25px_60px_-35px_rgba(123,30,30,0.8)]" : "border-[#D8C2AA] bg-[#FAF7F2] text-[#2C1A0E]"
-                  }`}
+                  className={`relative flex flex-col border p-5 ${tier.badge ? "border-[#C9A96E] bg-[#7B1E1E] text-white shadow-[0_25px_60px_-35px_rgba(123,30,30,0.8)]" : "border-[#D8C2AA] bg-[#FAF7F2] text-[#2C1A0E]"
+                    }`}
                 >
                   {tier.badge && (
                     <span className="absolute right-4 top-4 bg-[#F5C842] px-2 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-[#5C3D2E]">
@@ -414,9 +411,8 @@ export default function MenuShowcase() {
                         setSelectedPremium({ mode: premiumMode, tierId: tier.id });
                       }
                     }}
-                    className={`mt-5 inline-flex justify-center border px-4 py-3 text-[10px] font-bold uppercase tracking-[0.16em] transition-colors ${
-                      tier.badge ? "border-white/40 text-white hover:bg-white hover:text-[#7B1E1E]" : "border-[#7B1E1E] text-[#7B1E1E] hover:bg-[#7B1E1E] hover:text-white"
-                    }`}
+                    className={`mt-5 inline-flex justify-center border px-4 py-3 text-[10px] font-bold uppercase tracking-[0.16em] transition-colors ${tier.badge ? "border-white/40 text-white hover:bg-white hover:text-[#7B1E1E]" : "border-[#7B1E1E] text-[#7B1E1E] hover:bg-[#7B1E1E] hover:text-white"
+                      }`}
                   >
                     {selectedPremium?.mode === premiumMode && selectedPremium.tierId === tier.id ? "Send plan on WhatsApp →" : "Choose this plan →"}
                   </a>
