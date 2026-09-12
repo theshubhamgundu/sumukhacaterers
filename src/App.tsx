@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomerReviews from "./CustomerReviews";
+import MenuShowcase from "./MenuShowcase";
 import { createWhatsAppUrl } from "./whatsapp";
 
 const logoImg = "/images/logo.jpeg";
@@ -7,6 +8,7 @@ const logoImg = "/images/logo.jpeg";
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Menu", href: "#menu" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -157,6 +159,44 @@ function SectionImage({ src, alt, className = "", caption }: { src: string; alt:
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMenuPage, setIsMenuPage] = useState(() => window.location.hash === "#menu");
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const isMenu = window.location.hash === "#menu";
+      setIsMenuPage(isMenu);
+
+      if (!isMenu && window.location.hash) {
+        window.setTimeout(() => {
+          document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
+        }, 0);
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  if (isMenuPage) {
+    return (
+      <div className="min-h-full bg-[#FAF7F2] text-[#2C1A0E]">
+        <nav className="sticky top-0 z-50 border-b border-[#E0D0BC] bg-[#FAF7F2F5] backdrop-blur-sm">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 md:px-10">
+            <a href="#home" aria-label="Return to homepage">
+              <img src={logoImg} alt="Sumukha Caterers" className="h-12 w-auto object-contain" />
+            </a>
+            <div className="flex items-center gap-4 sm:gap-7">
+              <a href="#home" className="text-xs font-medium uppercase tracking-wider text-[#5C3D2E] hover:text-[#7B1E1E] sm:text-sm">Home</a>
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#7B1E1E] sm:text-sm">Menu</span>
+              <a href="#services" className="text-xs font-medium uppercase tracking-wider text-[#5C3D2E] hover:text-[#7B1E1E] sm:text-sm">Services</a>
+              <a href="#contact" className="hidden text-sm font-medium uppercase tracking-wider text-[#5C3D2E] hover:text-[#7B1E1E] sm:block">Contact</a>
+            </div>
+          </div>
+        </nav>
+        <MenuShowcase />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-full bg-[#FAF7F2] text-[#2C1A0E] overflow-clip">
@@ -240,8 +280,8 @@ export default function App() {
             <OrnamentDivider />
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-5 md:mt-6 justify-center md:justify-start">
-              <a href="#services" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
-                Explore Services
+              <a href="#menu" className="btn-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
+                Explore Menu
               </a>
               <a href="#contact" className="btn-outline-maroon px-8 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center">
                 Get a Quote
