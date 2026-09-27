@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CustomerReviews from "./CustomerReviews";
 import MenuShowcase from "./MenuShowcase";
 import { createWhatsAppUrl } from "./whatsapp";
+import BiryaniSection from "./BiryaniSection";
 
 const logoImg = "/images/logo.jpeg";
 
@@ -269,12 +270,12 @@ export default function App() {
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#2C1A0E] mb-4">
-              Welcome to<br />
-              <span className="text-[#7B1E1E] italic">Sumukha Caterers</span>
+              Best Caterers<br />
+              <span className="text-[#7B1E1E] italic">in Hyderabad</span>
             </h1>
 
             <p className="text-[#5C3D2E] text-sm sm:text-base leading-relaxed mb-6 md:mb-8 max-w-lg mx-auto md:mx-0">
-              Sumukha Caterers delivers reliable event catering for weddings, corporate functions, family gatherings, and special occasions.
+              Sumukha Caterers brings authentic South Indian food catering, Hyderabadi biryani, and thoughtfully planned menus to weddings, corporate events, and family celebrations across Hyderabad.
             </p>
 
             <OrnamentDivider />
@@ -427,6 +428,9 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* EXCLUSIVE BIRYANI PLATTERS */}
+      <BiryaniSection />
 
       {/* TESTIMONIALS */}
       <CustomerReviews />

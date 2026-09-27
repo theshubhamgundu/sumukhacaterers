@@ -171,3 +171,60 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Biryani section — custom range slider */
+.biryani-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #C9A96E30, #C9A96E60);
+  outline: none;
+  cursor: pointer;
+}
+
+.biryani-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F5C842, #C9A96E);
+  border: 3px solid #1A0F08;
+  box-shadow: 0 0 0 3px #C9A96E40, 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.biryani-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px #F5C84240, 0 6px 18px -2px rgba(0, 0, 0, 0.6);
+}
+
+.biryani-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+.biryani-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F5C842, #C9A96E);
+  border: 3px solid #1A0F08;
+  box-shadow: 0 0 0 3px #C9A96E40, 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.biryani-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px #F5C84240, 0 6px 18px -2px rgba(0, 0, 0, 0.6);
+}
+
+.biryani-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #C9A96E30, #C9A96E60);
+}
+
