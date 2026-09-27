@@ -288,6 +288,12 @@ export default function App() {
                 Get a Quote
               </a>
             </div>
+            <div className="mt-4 flex justify-center md:justify-start">
+              <a href="#biryani" className="text-xs font-semibold tracking-[0.2em] uppercase text-[#7B1E1E] hover:text-[#C9A96E] transition-colors inline-flex items-center gap-2">
+                <span>Explore Our Signature Biryani</span>
+                <span className="text-lg">→</span>
+              </a>
+            </div>
           </div>
 
           {/* Logo card */}
